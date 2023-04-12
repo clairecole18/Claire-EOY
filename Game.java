@@ -6,7 +6,7 @@ import java.awt.image.BufferedImage;
 public class Game extends JPanel implements Runnable{
 	
 	
-	private BufferedImage back;
+	//private BufferedImage back;
 	private ImageIcon background;
 	
 	public Game() {
@@ -14,7 +14,7 @@ public class Game extends JPanel implements Runnable{
 		
 	}
 	
-	public void run() {
+	//public void run() {
 		try {
 			while(true) {
 				Thread.currentThread().sleep(5);
