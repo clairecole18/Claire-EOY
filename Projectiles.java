@@ -4,24 +4,24 @@ import javax.swing.ImageIcon;
 
 public class Projectiles {
 	private int x, y, w, h, dx, dy;
-	private ImageIcon ShipImg;
+	//private ImageIcon ShipImg;
 	
-	public boolean collision(SpaceShip s) {
-		Rectangle ship = new Rectangle(s.getX(), s.getY(), s.getW(),s.getH());
-		Rectangle missile = new Rectangle(getX(), getY(), getW(), getH());
+	//public boolean collision(SpaceShip s) {
+		//Rectangle ship = new Rectangle(s.getX(), s.getY(), s.getW(),s.getH());
+		//Rectangle missile = new Rectangle(getX(), getY(), getW(), getH());
 		
-		if(ship.intersects(missile)) {
-			return true; 
-		}
+		//if(ship.intersects(missile)) {
+			//return true; 
+		//}
 		
-		return false;
-	}
+		//return false;
+	//}
 	public Projectiles() {
 		x= 1;
 		y = 1;
 		w = 1;
 		h = 1;
-		ShipImg = new ImageIcon("");
+		//ShipImg = new ImageIcon("");
 		dx = 0;
 		dy = 0;
 	}
@@ -30,7 +30,7 @@ public class Projectiles {
 		y= yV;
 		w = width;
 		h = height;
-		ShipImg = i;
+		//ShipImg = i;
 		dx = 1;
 		dy = 4;
 	}
@@ -39,7 +39,7 @@ public class Projectiles {
 		y= yV;
 		w = 10;
 		h = 20;
-		ShipImg = i;
+		//ShipImg = i;
 		dx = 0;
 		dy = -10;
 	}
@@ -60,9 +60,9 @@ public class Projectiles {
 	
 		return h;
 	}
-	public ImageIcon getShipImg() {
-		return ShipImg;
-	}
+	//public ImageIcon getShipImg() {
+		//return ShipImg;
+	//}
 	
 	public int getDx() {
 		return dx;
@@ -92,3 +92,5 @@ public class Projectiles {
 		y+=dy;
 	}
 }
+
+
