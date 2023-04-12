@@ -1,11 +1,11 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
+//import java.awt.event.*;
 
 public class Main extends JFrame{
 	private static final int WIDTH =1800;
 	private static final int HEIGHT=1600;
-	
+
 	public Main () {
 		//super("KeyListener Demo");
 		setSize(WIDTH, HEIGHT);
@@ -27,10 +27,10 @@ public class Main extends JFrame{
 	
 
 	public static void main(String[] args) {
-		Main run = new Main();
+		//Main run = new Main();
 		
 
 	}
 
 
-//}
+}
