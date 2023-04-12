@@ -35,7 +35,7 @@ public class Game  extends JPanel implements Runnable, KeyListener, MouseListene
 		this.addMouseMotionListener(this);
 		currentTime = System.currentTimeMillis();
 		startTime= System.currentTimeMillis();
-		background = new ImageIcon("space.jpg");
+		background = new ImageIcon("bg.png");
 		aliens = setAliens();
 		p=new Player();
 		//add in x & y
