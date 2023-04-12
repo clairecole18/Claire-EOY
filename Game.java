@@ -4,10 +4,13 @@ import java.awt.event.*;
 import java.awt.image.BufferedImage;
 
 public class Game extends JPanel implements Runnable{
+	
+	
 	private BufferedImage back;
+	private ImageIcon background;
 	
 	public Game() {
-		back=null;
+		background = new ImageIcon("bg.png");
 		
 	}
 	
