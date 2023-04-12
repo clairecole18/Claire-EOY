@@ -1,4 +1,4 @@
-
+//hi taylor!!
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -15,9 +15,9 @@ public class Game  extends JPanel implements Runnable, KeyListener, MouseListene
 	private int key; 
 	private ImageIcon background;
 	private ArrayList<Invaders> aliens;
-	private ArrayList <PlayerProj> playerMiss = new ArrayList();
-	private ArrayList<InvaderProj> alienMiss = new ArrayList();
-	private PlayerShip player; 
+	//private ArrayList <PlayerProj> playerMiss = new ArrayList();
+	//private ArrayList<InvaderProj> alienMiss = new ArrayList();
+	//private PlayerShip player; 
 	private int s; 
 	private Player p;
 	private long currentTime;
@@ -39,7 +39,7 @@ public class Game  extends JPanel implements Runnable, KeyListener, MouseListene
 		aliens = setAliens();
 		p=new Player();
 		//add in x & y
-		player = new PlayerShip(100,850);
+		//player = new PlayerShip(100,850);
 		s = 1;
 
 	}
@@ -88,7 +88,7 @@ public class Game  extends JPanel implements Runnable, KeyListener, MouseListene
 		if(!aliens.isEmpty()) {
 		
 			if((System.currentTimeMillis()-currentTime)%100 == 0) {
-				alienMiss.add(new InvaderProj(aliens.get((int)(Math.random()*aliens.size()-1)).getX(),aliens.get(aliens.size()-1).getY()));
+				//alienMiss.add(new InvaderProj(aliens.get((int)(Math.random()*aliens.size()-1)).getX(),aliens.get(aliens.size()-1).getY()));
 				p.playmusic("lazer2.wav");
 				currentTime = System.currentTimeMillis();
 			}
@@ -107,16 +107,16 @@ public class Game  extends JPanel implements Runnable, KeyListener, MouseListene
 		
 		g2d.setColor(Color.white);
 		
-		g2d.drawImage(player.getShipImg().getImage(), player.getX(), player.getY(), 100, 100, this);
+		//g2d.drawImage(player.getShipImg().getImage(), player.getX(), player.getY(), 100, 100, this);
 		g2d.drawString("Time: " + (((currentTime-startTime)/1000)%60), 50, 100);
 		if(!aliens.isEmpty()) {
 			drawAliens(g2d);	
 			moveAliens();
 			
-			if(!playerMiss.isEmpty()){
+			//if(!playerMiss.isEmpty()){
 				drawPlayerMiss(g2d);
 			}
-			if(!alienMiss.isEmpty()) {
+			//if(!alienMiss.isEmpty()) {
 				drawalienMiss(g2d);
 			}
 			}
@@ -134,7 +134,7 @@ public class Game  extends JPanel implements Runnable, KeyListener, MouseListene
 
 	private void drawPlayerMiss(Graphics g2d) {
 		// TODO Auto-generated method stub
-		for(PlayerProj pm: playerMiss) {
+		//for(PlayerProj pm: playerMiss) {
 			g2d.drawImage(pm.getShipImg().getImage(),pm.getX(),pm.getY(),pm.getW(),pm.getH(),this);
 			pm.move();
 		}
@@ -142,28 +142,28 @@ public class Game  extends JPanel implements Runnable, KeyListener, MouseListene
 	}
 	private void drawalienMiss(Graphics g2d) {
 		// TODO Auto-generated method stub
-		for(InvaderProj am: alienMiss) {
-			g2d.drawImage(am.getShipImg().getImage(),am.getX(),am.getY(),am.getW(),am.getH(),this);
-			am.move();
+		//for(InvaderProj am: alienMiss) {
+			//g2d.drawImage(am.getShipImg().getImage(),am.getX(),am.getY(),am.getW(),am.getH(),this);
+			//am.move();
 		}
 		
 	}
 	private boolean checkWall() {
 		for(Invaders inv : aliens) {
-			if(inv.getX()<0 || inv.getX()+inv.getW()>=1800) {
+			//if(inv.getX()<0 || inv.getX()+inv.getW()>=1800) {
 				return true;
 		}
 			
 		}
-		return false;
+		//return false;
 		
 	}
 	private void moveAliens() {
 		if(checkWall() == true) {
 			for(Invaders inv : aliens) {
 			
-				inv.reverseHorz();
-				inv.setY(inv.getY()+10);
+				//inv.reverseHorz();
+				//inv.setY(inv.getY()+10);
 				
 			}
 			
@@ -172,15 +172,15 @@ public class Game  extends JPanel implements Runnable, KeyListener, MouseListene
 		
 		for(Invaders inv : aliens) {
 			
-			inv.Hmove();
+			//inv.Hmove();
 		}
 	}
 
 	private boolean collision() {
 		
 		for(int a=0;a<aliens.size();a++) {
-	for(int pm=0;pm<playerMiss.size();pm++) {
-	if	( ( ( aliens.get(a).getY() <= playerMiss.get(pm).getY() + playerMiss.get(pm).getH() && playerMiss.get(pm).getY() <= aliens.get(a).getY()+aliens.get(a).getH()) && (aliens.get(a).getX() <= playerMiss.get(pm).getX() + playerMiss.get(pm).getW() && playerMiss.get(pm).getX() <= aliens.get(a).getX() + aliens.get(a).getW()) ) && playerMiss.get(pm).getDy() <0)
+	//for(int pm=0;pm<playerMiss.size();pm++) {
+	//if	( ( ( aliens.get(a).getY() <= playerMiss.get(pm).getY() + playerMiss.get(pm).getH() && playerMiss.get(pm).getY() <= aliens.get(a).getY()+aliens.get(a).getH()) && (aliens.get(a).getX() <= playerMiss.get(pm).getX() + playerMiss.get(pm).getW() && playerMiss.get(pm).getX() <= aliens.get(a).getX() + aliens.get(a).getW()) ) && playerMiss.get(pm).getDy() <0)
 	{
 			deadAlien = deadAlien+1;
 			aliens.remove(a);
@@ -203,7 +203,7 @@ return false;
 	private void drawAliens(Graphics g2d) {
 		// TODO Auto-generated method stub
 		for(Invaders inv : aliens) {
-			g2d.drawImage(inv.getShipImg().getImage(), inv.getX(), inv.getY(), inv.getW(), inv.getH(), this);
+			//g2d.drawImage(inv.getShipImg().getImage(), inv.getX(), inv.getY(), inv.getW(), inv.getH(), this);
 		}
 	} 
 
@@ -227,7 +227,7 @@ return false;
 		key= e.getKeyCode();
 		System.out.println(key);
 		if(e.getKeyCode() ==32) {
-			playerMiss.add(new PlayerProj(player.getX()+20+player.getW()/2,player.getY()));
+			//playerMiss.add(new PlayerProj(player.getX()+20+player.getW()/2,player.getY()));
 			p.playmusic("lazerSound.wav");
 		}
 		
@@ -269,7 +269,7 @@ return false;
 	@Override
 	public void mouseMoved(MouseEvent arg0) {
 		// TODO Auto-generated method stub
-		player.setX(arg0.getX());
+		//player.setX(arg0.getX());
 	}
 
 
@@ -301,7 +301,7 @@ return false;
 	@Override
 	public void mousePressed(MouseEvent arg0) {
 		// TODO Auto-generated method stub
-		playerMiss.add(new PlayerProj(player.getX()+20+player.getW()/2,player.getY()));
+		//playerMiss.add(new PlayerProj(player.getX()+20+player.getW()/2,player.getY()));
 	}
 
 
