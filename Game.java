@@ -6,7 +6,7 @@ import java.awt.image.BufferedImage;
 public class Game extends JPanel implements Runnable{
 	
 	
-	private BufferedImage back;
+	//private BufferedImage back;
 	private ImageIcon background;
 	
 	public Game() {
@@ -63,7 +63,7 @@ public class Game extends JPanel implements Runnable{
 		//This line tells the program to draw everything above. If you delete this, nothing will show up.
 		twoDgraph.drawImage(back, 0, 0, null);
 	}
-	
-	}
+
+}
 
 
