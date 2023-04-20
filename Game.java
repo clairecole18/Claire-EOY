@@ -12,7 +12,7 @@ public class Game extends JPanel implements Runnable{
 	public Game() {
 		background = new ImageIcon("bg.png");
 		
-	}
+	}{
 	
 	//public void run() {
 		try {
@@ -23,7 +23,7 @@ public class Game extends JPanel implements Runnable{
 		}
 		catch(Exception e) {}
 	}
-	
+
 	public void paint (Graphics g)
 	{
 		Graphics2D twoDgraph = (Graphics2D)g;
@@ -62,8 +62,7 @@ public class Game extends JPanel implements Runnable{
 		
 		//This line tells the program to draw everything above. If you delete this, nothing will show up.
 		twoDgraph.drawImage(back, 0, 0, null);
-	}
+	}}
 	
-	}
 
 
